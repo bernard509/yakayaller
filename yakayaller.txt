@@ -5,8 +5,8 @@ PHP (minimum 7.3)
 
 dans wamp > apache/httpd.conf
 on doit avoir 
-DocumentRoot "C:/Transway/rodrigue/yoann_exo" ou path_to_yakayaller_folder
-site accessible ensuite sur http://localhost/yakayaller/public/
+DocumentRoot "C:/yakayaller" 
+site accessible ensuite sur http://yakayaller.test/public
 droits d'écriture de apache sur "storage" requis
 
 dans composer.json ==> "laravel/framework": "5.2.*"
@@ -28,19 +28,10 @@ apache avec module mod_rewrite
 
 lire "Organisation de Laravel"
 
-# lib carte
-https://packagist.org/packages/gonoware/laravel-maps
-composer require gonoware/laravel-maps
-php artisan vendor:publish --tag=maps
+
 
 
 ## Mise à jour
 composer update
 
-# déploiement sur clevercloud depuis le depot github https://github.com/bernard509/yakayaller/tree/main
-https://www.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-laravel/
 
-https://laravel.com/docs/8.x/http-client
-composer require guzzlehttp/guzzle
-
-cd C:\Transway\rodrigue\yoann_exo\yakayaller
