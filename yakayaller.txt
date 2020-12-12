@@ -28,10 +28,12 @@ apache avec module mod_rewrite
 
 lire "Organisation de Laravel"
 
-
-
-
 ## Mise à jour
 composer update
+
+# lib carte
+https://packagist.org/packages/gonoware/laravel-maps
+composer require gonoware/laravel-maps
+php artisan vendor:publish --tag=maps
 
 
