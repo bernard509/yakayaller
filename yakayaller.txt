@@ -1,0 +1,46 @@
+## Installation
+wamp + composer
+composer create-project laravel/laravel yakayaller
+PHP (minimum 5.5.9)
+
+dans wamp > apache/httpd.conf
+on doit avoir 
+DocumentRoot "C:/Transway/rodrigue/yoann_exo" ou path_to_yakayaller_folder
+site accessible ensuite sur http://localhost/yakayaller/public/
+droits d'écriture de apache sur "storage" requis
+
+dans composer.json ==> "laravel/framework": "5.2.*"
+configuration du .env (bdd)
+préparer le .env.production
+
+installer Le composant Html
+composer.json
+"require": {
+    "php": ">=5.5.9",
+    "laravel/framework": "5.1.*",
+    "laravelcollective/html": "5.2.*"
+},
+puis composer update
+
+Les extensions PDO, Tokenizer, OpenSSL et Mbstring de PHP doivent être activées.
+apache avec module mod_rewrite
+
+
+lire "Organisation de Laravel"
+
+# lib carte
+https://packagist.org/packages/gonoware/laravel-maps
+composer require gonoware/laravel-maps
+php artisan vendor:publish --tag=maps
+
+
+## Mise à jour
+composer update
+
+# déploiement sur clevercloud depuis le depot github https://github.com/bernard509/yakayaller/tree/main
+https://www.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-laravel/
+
+https://laravel.com/docs/8.x/http-client
+composer require guzzlehttp/guzzle
+
+cd C:\Transway\rodrigue\yoann_exo\yakayaller
