@@ -25,10 +25,12 @@ Route::get('/user', function () {
     return view('user');
 });
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
 // home avec formulaire de saisie de ville et image de fond de ville
 
 // page carte + liste des evenements + bouton signin + formulaire recherche
 
 // page profil avec formulaire modification user
-
-///cron de récupération journalier des evenements
