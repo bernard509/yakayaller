@@ -19,3 +19,9 @@ Route::get('/', function () {
 Route::get('/map', function () {
     return view('map');
 });
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+Route::get('/user', function () {
+    return view('user');
+});

@@ -1,0 +1,60 @@
+    
+
+    
+    h1{
+        color: orangered;
+        text-align:center;
+        font-family:cursive;
+        font-style:italic;
+        margin-bottom: 100px;
+        padding-top: 25px;
+    }
+    .gnw-map-service {
+
+width: 750px;
+left:50px;
+    }
+    #wrapper{
+        width:95%;
+        margin:auto;
+        background-color: black;
+        
+        
+        
+        
+    }
+    #taille{
+        width:40%;
+        box-shadow: 3px 3px 0px #aaa;
+        left:800px;
+        position: relative;
+        top: 100px;
+    }
+    ol{
+        list-style-type: none;
+    }
+    
+    #carte{
+        position: relative;
+        bottom: 320px;
+        
+    }
+    h2{
+        color: rgb(90, 6, 6);
+        font-style: oblique;
+        font-family: cursive;
+        text-decoration: underline;
+    }
+    section{
+        background-color: lightgrey;
+        
+    }
+    #wraper{
+        margin: auto;
+        width: 95%;
+    }
+    #form{
+        text-align: center;
+        
+    }
+    
