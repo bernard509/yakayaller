@@ -44,7 +44,63 @@ php artisan vendor:publish --tag=maps
 https://www.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-laravel/
 
 https://laravel.com/docs/8.x/http-client
-composer require guzzlehttp/guzzle
 
 cd C:\Transway\rodrigue\yoann_exo\yakayaller
+
+<VirtualHost yakayaller.test:80>
+  ServerName yakayaller.test
+  DocumentRoot "c:/Transway/rodrigue/yoann_exo/yakayaller/public"
+  <Directory "c:/Transway/rodrigue/yoann_exo/yakayaller/">
+    Options -Indexes +Includes +FollowSymLinks +MultiViews
+    AllowOverride All
+    Require local
+  </Directory>
+</VirtualHost>
+
+## Api evenenement
+https://public.opendatasoft.com/explore/dataset/evenements-publics-cibul/api/?
+https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-cibul&q=&lang=fr&facet=tags&facet=placename&facet=department&facet=region&facet=city&facet=date_start&facet=date_end&facet=pricing_info&facet=updated_at&facet=city_district&refine.city=Angers&refine.department=Maine-et-Loire
+
+## CRON get events
+https://www.tutsmake.com/laravel-8-cron-job-task-scheduling-tutorial/
+php artisan make:command LogCron --command=log:cron
+C:\Transway\rodrigue\yoann_exo\yakayaller\app\Console\Commands\LogCron.php
+C:\Transway\rodrigue\yoann_exo\yakayaller\app\Console\Kernel.php
+
+# Execute le scheduler une fois
+php artisan schedule:run
+# Ensuite pour l'appeller toutes les minutes ajouter dans la crontab du serveur
+* * * * * cd /path-to-project && php artisan schedule:run >> /dev/null 2>&1
+
+# pour insérer les evenements récupérés via guzzle
+# https://openclassrooms.com/fr/courses/1811341-decouvrez-le-framework-php-laravel-ancienne-version/1834041-migrations-et-modeles
+
+php artisan make:model Event
+php artisan make:model Category
+php artisan make:model Address
+
+# seeders
+https://8bityard.com/how-to-get-country-list-in-laravel/
+php artisan make:seeder CountrySeeder
+php artisan make:seeder CategorySeeder
+# paramétrer C:\Transway\rodrigue\yoann_exo\yakayaller\database\seeders\DatabaseSeeder.php
+php artisan db:seed
+
+
+https://marketplace.visualstudio.com/items?itemName=berublan.vscode-log-viewer
+# log viewer
+"npm.enableRunFromFolder": true,
+    "logViewer.watch": [
+        {
+            "title": "yakayaller logger",
+            "pattern": "C:\\Transway\\rodrigue\\yoann_exo\\yakayaller\\storage\\logs\\laravel.log"
+        }
+
+# liste des événements
+SELECT e.title, a.address FROM `event` e 
+inner join address a on a.id=e.address_id
+WHERE
+-- start_date between '2020-12-15' and '2021-01-15' and
+(a.zipcode in('49000', '49100') or a.city like '%angers%')
+
 ###########################

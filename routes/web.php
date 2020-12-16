@@ -21,6 +21,10 @@ Route::get('/map', function () {
     return view('map');
 });
 
+Route::get('/user', function () {
+    return view('user');
+});
+
 // home avec formulaire de saisie de ville et image de fond de ville
 
 // page carte + liste des evenements + bouton signin + formulaire recherche
