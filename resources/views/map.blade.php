@@ -42,37 +42,18 @@
             
             <h1>YAKAYALLER !</h1>
             <section>
-           
-            
                 
-                    <article id="taille">
+    <article id="taille">
         <ol>
-                    <li>
-                    <h2>Evênement 1</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut consequatur hic magnam assumenda neque laboriosam sint ipsam a, numquam voluptatum, commodi vitae facere sequi blanditiis molestias nemo quasi explicabo optio.
-            
-        </p>
-        </li>
-                    <li>
-                    <h2>Evênement 2</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, qui rerum ullam ipsam provident rem temporibus officia tenetur error. Dolorem necessitatibus aliquid numquam modi hic eius nemo repellat illo ullam?
-        </p>
-        </li>
-                    <li>
-                    <h2>Evênement 3</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est quaerat ea omnis natus saepe eaque quo repellat dolores laborum aut perferendis, pariatur sint! Illo reprehenderit dolorum dolores tempore consequuntur maxime?
-        </p>
-        </li>
-        </ol>  
-
-                    </article>
-                
-                
-                    <article id="carte">
-                    
-                
-
-                
+            @foreach ($events as $e)
+            <li>
+                <h2>{{ $e->title }}</h2>
+                <p>{{ $e->description }}</p>
+            </li>
+            @endforeach
+        </ol>
+    </article>
+                    <article id="carte">                
                         @map([
     'lat' => 48.134664,
     'lng' => 11.555220,

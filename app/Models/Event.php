@@ -1,5 +1,5 @@
 <?php
-
+// https://openclassrooms.com/fr/courses/1811341-decouvrez-le-framework-php-laravel-ancienne-version/1929791-query-builder
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,20 +18,37 @@ class Event extends Model
     //     'delayed' => false,
     // ];
 
-    // use App\Models\Event;
+    public function byCityAndDateBetween($city, $min_date, $max_date) {
+        $events = Event::join('address', 'address.id', '=', 'event.address_id')
+            ->join('category', 'category.id', '=', 'event.category_id')
+            //->whereBetween('start_date', array($min_date, $max_date))
+            ->where('start_date', '>=', $min_date)
+            //->addWhere("start_date < $max_date")
+            //->addWhere("address.city like '%$city%'")
+            //->orderBy('start_date desc')
+            ->take(2)
+            ->get();
+
+        return $events;
+    }
+
+    public function adresse()
+	{
+		return $this->belongsTo('App\Address');
+    }
+
+    public function category()
+	{
+		return $this->belongsTo('App\Category');
+    }
+    
     // foreach (Event::all() as $event) {
     //     echo $event->title;
     // }
-
-    // $events = self::where('start_date' > '2020-12-01')
-    //            ->orderBy('title')
-    //            ->take(10)
-    //            ->get();
-
-    // $flight = Flight::where('number', 'FR 900')->first();
-    // $freshFlight = $flight->fresh();
+    // $event = Event::where('number', 'FR 900')->first();
+    // $freshEvent = $event->fresh();
     
-    // $flight = Flight::where('number', 'FR 900')->first();
+    // $event = Event::where('number', 'FR 900')->first();
     // $flight->number = 'FR 456';
     // $flight->refresh();    
     // $flight->number; // "FR 900"

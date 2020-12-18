@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/map', function () {
-    return view('map');
-});
+Route::get('/map', 'App\Http\Controllers\MapController@index');
 
 Route::get('/user', function () {
     return view('user');

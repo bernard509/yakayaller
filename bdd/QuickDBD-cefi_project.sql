@@ -19,6 +19,7 @@ CREATE TABLE `event` (
         `id`
     )
 );
+ALTER TABLE `event` ADD INDEX(`uid`);
 
 CREATE TABLE `category` (
     `id` integer  NOT NULL AUTO_INCREMENT,

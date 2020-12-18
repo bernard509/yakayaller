@@ -58,8 +58,7 @@ cd C:\Transway\rodrigue\yoann_exo\yakayaller
 </VirtualHost>
 
 ## Api evenenement
-https://public.opendatasoft.com/explore/dataset/evenements-publics-cibul/api/?
-https://public.opendatasoft.com/api/records/1.0/search/?dataset=evenements-publics-cibul&q=&lang=fr&facet=tags&facet=placename&facet=department&facet=region&facet=city&facet=date_start&facet=date_end&facet=pricing_info&facet=updated_at&facet=city_district&refine.city=Angers&refine.department=Maine-et-Loire
+https://help.opendatasoft.com/apis/ods-search-v1/#records-download-api
 
 ## CRON get events
 https://www.tutsmake.com/laravel-8-cron-job-task-scheduling-tutorial/
@@ -97,10 +96,26 @@ https://marketplace.visualstudio.com/items?itemName=berublan.vscode-log-viewer
         }
 
 # liste des événements
-SELECT e.title, a.address FROM `event` e 
-inner join address a on a.id=e.address_id
+SELECT
+	e.uid,
+	e.start_date,
+    c.label as category,
+    e.title,
+    a.address
+FROM `event` e 
+INNER JOIN address a ON a.id=e.address_id
+INNER JOIN category c ON c.id = e.category_id
 WHERE
--- start_date between '2020-12-15' and '2021-01-15' and
-(a.zipcode in('49000', '49100') or a.city like '%angers%')
+	a.zipcode IN ('49000', '49100') OR
+    a.city like '%angers%'
+    -- AND start_date between '2020-12-15' AND '2021-01-15' and
+ORDER BY start_date DESC
 
 ###########################
+
+## view/controllers/model
+php artisan make:controller MapController
+cf syntaxe dans web.php
+
+https://openclassrooms.com/fr/courses/1811341-decouvrez-le-framework-php-laravel-ancienne-version/1929791-query-builder
+https://laravel.com/docs/8.x/blade#displaying-data
