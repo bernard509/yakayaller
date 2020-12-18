@@ -47,22 +47,10 @@
                     
                 <article id="carte">
                     @map([
-                        'lat' => 48.134664,
-                        'lng' => 11.555220,
-                        'zoom' => 6,
-                        'markers' => [
-                            @foreach ($events as $e)
-                            [
-                                'title' => {{ $e->title }},
-                                'lat' => {{ $e->latitude }},
-                                'lng' => {{ $e->longitude }},
-                                'url' => {{ $e->link }},
-                                'icon' => 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
-                                'icon_size' => [20, 32],
-                                'icon_anchor' => [0, 32],
-                            ],
-                            @endforeach
-                        ],
+                        'lat' => 47.473861,
+                        'lng' => -0.559159,
+                        'zoom' => 9,
+                        'markers' => $markers
                     ])
                 </article>
             </section>

@@ -119,3 +119,5 @@ cf syntaxe dans web.php
 
 https://openclassrooms.com/fr/courses/1811341-decouvrez-le-framework-php-laravel-ancienne-version/1929791-query-builder
 https://laravel.com/docs/8.x/blade#displaying-data
+
++ALTER TABLE `event` ADD INDEX(`uid`);

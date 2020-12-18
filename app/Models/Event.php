@@ -21,12 +21,11 @@ class Event extends Model
     public function byCityAndDateBetween($city, $min_date, $max_date) {
         $events = Event::join('address', 'address.id', '=', 'event.address_id')
             ->join('category', 'category.id', '=', 'event.category_id')
-            //->whereBetween('start_date', array($min_date, $max_date))
             ->where('start_date', '>=', $min_date)
-            //->addWhere("start_date < $max_date")
-            //->addWhere("address.city like '%$city%'")
-            //->orderBy('start_date desc')
-            ->take(2)
+            ->where('start_date', '<', $max_date)
+            ->where('city', 'like', '%'.$city.'%')
+            ->orderBy('start_date')
+            //->take(2)
             ->get();
 
         return $events;
