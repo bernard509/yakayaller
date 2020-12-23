@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MapController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/map', function () {
-    return view('map');
-});
-Route::get('/welcome', function () {
-    return view('welcome');
-});
 Route::get('/user', function () {
     return view('user');
 });
+
+Route::get('/map', 'App\Http\Controllers\MapController@index');
+Route::get('/home', 'App\Http\Controllers\HomeController@index');
+Route::get('/profil', 'App\Http\Controllers\ProfilController@index');
+
+Route::post('/map', 'App\Http\Controllers\MapController@index');
+
+
