@@ -58,12 +58,27 @@ class LogCron extends Command
 
         // compteur total des événements traités
         $cpt_events = 0;
+        // compteur total des événements déjà traités depuis le dernier import
+        $cpt_event_already_inserted = 0;
         // Initialisation du tableau des événements remontés sur un appel
         $events = [];
-        // Année courante demandée
-        $current_year = 2019;
-        // Mois courant
-        $current_month = 1;
+
+        $last_inserted_event = \App\Models\Event::lastEvent();
+        if(isset($last_inserted_event) && isset($last_inserted_event->start_date)){
+            // Année courante demandée
+            $current_year = substr($last_inserted_event->start_date, 0, 4);
+            // Mois courant
+            $current_month = substr($last_inserted_event->start_date, 5, 2);
+        }
+        else{
+            // Année courante demandée
+            $current_year = 2019;
+            // Mois courant
+            $current_month = 1;
+        }
+        // \Log::info("$current_year-$current_month");
+        // return true;
+
         // Nombre d'iteration maximmum (nb mois demandé)
         $max_iteration = 36;
         // Itération courante
@@ -127,11 +142,10 @@ class LogCron extends Command
                                         );
                                     }
                                 }
-                
-                                // Insertion de l'événement' en bdd si son uid n'existe pas déjà
-                                $db_event = \App\Models\Event::firstOrCreate(
-                                    ['uid'=> mb_strtolower($event['uid'])],
-                                    [
+
+                                try {
+                                    $db_event = \App\Models\Event::create(
+                                        ['uid'=> mb_strtolower($event['uid']),
                                         'title'=> isset($event['title']) ? $event['title'] : $event['space_time_info'],
                                         'start_date' => $event['date_start'],
                                         'end_date' => isset($event['date_end']) ? $event['date_end'] : null,
@@ -143,18 +157,21 @@ class LogCron extends Command
                                         'link' => isset($event['link']) ? $event['link'] : null,
                                         'image' => isset($event['image']) ? $event['image'] : null,
                                         'image_thumb' => isset($event['image_thumb']) ? $event['image_thumb'] : null
+                                        ]
+                                    );
 
-                                        // Autres champs non traités
-                                        // 'updated_at' => '2020-11-04T15:09:40+00:00',
-                                        // 'timetable' => '2020-11-14T20:00:00 2020-11-14T20:30:00;2020-11-14T21:30:00 2020-11-14T22:00:00',
-                                        // 'lang' => 'fr',
-
-                                    ]
-                                );
-
-                                $cpt_events++;
+                                    $cpt_events++;
+                                } catch(\PDOException $pdoe){
+                                    if(str_contains($pdoe->getMessage(), "pour la clef 'event.uid'")){
+                                        $cpt_event_already_inserted++;
+                                        if($cpt_event_already_inserted%1000 == 0) {
+                                            \Log::info("$cpt_event_already_inserted already processed !");
+                                        }
+                                    }
+                                    else throw $pdoe;
+                                }
                             }
-                            if($cpt_events%1000 == 0) {
+                            if($cpt_events!= 0 && $cpt_events%1000 == 0) {
                                 \Log::info("$cpt_events processed !");
                             }
                         }
@@ -175,6 +192,7 @@ class LogCron extends Command
                     $current_month++;
                 }
                 \Log::info("$cpt_events processed !");
+                \Log::info("$cpt_event_already_inserted already processed !");
             }
             \Log::info("SUCCESS : $cpt_events added !");
         } catch (Error $e){

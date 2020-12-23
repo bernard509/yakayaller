@@ -112,10 +112,11 @@ WHERE
 ORDER BY start_date DESC
 
 ###########################
-https://openclassrooms.com/fr/courses/1811341-decouvrez-le-framework-php-laravel-ancienne-version/1929791-query-builder
-https://laravel.com/docs/8.x/blade#displaying-data
-
-+ALTER TABLE `event` ADD INDEX(`uid`);
+ALTER TABLE `event` ADD UNIQUE(`uid`);
+ALTER TABLE `event` ADD INDEX(`uid`); 
+correction des seeder en desactivcant les controles de cle entrangere pour permettre les truncate
+recréer la db et relanvcer le logcron, tous les event peuvent être importé en 1 h environ
+my.ini default-storage-engine=InnoDB
 overflow:scroll;
 height:400px;
 
@@ -124,6 +125,6 @@ les commandes artisan : https://laravel.com/docs/8.x/artisan
 le query builder : https://laravel.com/docs/8.x/queries avec les where, orderby sql etc...
 la doc sur les seeder : https://laravel.com/docs/8.x/seeding
 tout sur les controller : https://laravel.com/docs/8.x/controllers
-les blade : https://laravel.com/docs/8.x/blade
+les blade : https://laravel.com/docs/8.x/blade && https://laravel.com/docs/8.x/blade#displaying-data
 et les view : https://laravel.com/docs/8.x/views
 reste encore a piger les sessions et les formulaires

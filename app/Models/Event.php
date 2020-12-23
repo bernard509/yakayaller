@@ -31,6 +31,10 @@ class Event extends Model
         return $events;
     }
 
+    public static function lastEvent(){
+        return Event::orderBy('start_date', 'desc')->first();
+    }
+
     public function adresse()
 	{
 		return $this->belongsTo('App\Address');
