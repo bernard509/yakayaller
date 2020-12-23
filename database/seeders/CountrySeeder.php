@@ -14,7 +14,9 @@ class CountrySeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('country')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
  
         $countries = [
             ['label' => 'Afghanistan', 'code' => 'AF'],
