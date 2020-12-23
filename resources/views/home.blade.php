@@ -44,7 +44,7 @@
         <div id="form">
                 <form method="POST" action="/map">
                     <!--<label for="ville">Saisir la ville</label>--> <input type="text" id="ville" name="ville" placeholder="saisissez votre ville"/><br>
-                    <input type="button" value="valider"></input>
+                    <input type="button" value="valider" id="button"></input>
                 </form>
         </div>   
     </body>
