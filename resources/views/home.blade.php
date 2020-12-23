@@ -36,7 +36,7 @@
         
             <button class="button"><a href="/profil" class="text">Inscription</a></button>
             <button class="button"><a href="/map" class="text">Connection</a></button>
-       
+
         </div>
         
 

@@ -1,7 +1,7 @@
 ﻿
 CREATE TABLE `event` (
     `id` integer  NOT NULL AUTO_INCREMENT,
-    `uid` varchar(255) NOT NULL ,
+    `uid` integer NOT NULL ,
     `address_id` integer  NOT NULL ,
     `category_id` integer,
     `title` varchar(255)  NOT NULL ,
@@ -19,6 +19,8 @@ CREATE TABLE `event` (
         `id`
     )
 );
+ALTER TABLE `event` ADD UNIQUE(`uid`);
+ALTER TABLE `event` ADD INDEX(`uid`); 
 
 CREATE TABLE `category` (
     `id` integer  NOT NULL AUTO_INCREMENT,
