@@ -21,11 +21,6 @@
             <label for="firstname">Prénom :</label>
             <input name="firstname" id="firstname" type="text" size="30" maxlength="30" />
         </p>
-
-        <p>
-            <label for="phone">Téléphone :</label>
-            <input name="phone" id="phone" type="number" />
-        </p>
         <p>
             <label for="email">Adresse mail:</label>
             <input name="email" id="email" type="email" size="30" maxlength="30" />

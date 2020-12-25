@@ -138,4 +138,23 @@ left:50px;
         left: 95px;
         position: relative;
     }
-    
+    #lien{
+        color: crimson;
+    }
+    #connexion{
+        top: 30px;
+        margin: auto;
+        width: 400px;
+        padding: 1em;
+        border: 1px solid #CCC;
+        border-radius: 1em;
+    }
+    #signin{
+        height:750px ;
+        margin: auto;
+        width: 95%;
+        background-image: url(/img/ville.jpg);
+        background-repeat: no-repeat;
+        background-color: black;
+
+    }

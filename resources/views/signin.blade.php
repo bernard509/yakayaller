@@ -8,10 +8,10 @@
     <title>yakayaller.net - connexion</title>
 </head>
 <body>
-<div id="profil">
+<div id="signin">
     <h1 id="title2">YAKAYALLER !</h1>
 
-    <form action="/signup" method="post" id="inscription">
+    <form action="/signup" method="post" id="connexion">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         <h2>Connexion</h2>
         <p>
@@ -27,7 +27,7 @@
             <input class="button" type="submit" value="Envoyer"></input>
             <!--<input class="bouton" type="button" value="reset"></input>-->
         </p>
-        <p>Pas encore de compte?</p>
+        <p>Pas encore de compte?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/signup" id="lien">Cliquez ici</a></p>
         
         </form>
             
