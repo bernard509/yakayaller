@@ -1,160 +1,173 @@
-    
+body{
+    font-family: 'Bangers', cursive;
+}
 
-    
-    h1{
-        color: rgb(90, 6, 6);
-        text-align:center;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-style:italic;
-        margin-bottom: 100px;
-        padding-top: 25px;
-    }
-    .gnw-map-service {
+#bg {
+    position: fixed; 
+    top: -50%; 
+    left: -50%; 
+    width: 200%; 
+    height: 200%;
+  }
+  #bg img {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+    min-width: 50%;
+    min-height: 50%;
+  }
 
+  #yakayaller_title{
+    top: 80px;
+    color:black;
+    left: 45%;
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+#user{
+    height:750px ;
+    margin: auto;
+    width: 95%;
+    background-image: url(/img/ville4.jpg);
+    background-repeat: no-repeat;
+    background-color: black;
+}
+    
+h1{
+    color: rgb(90, 6, 6);
+    text-align:center;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+    /* font-style:italic; */
+    margin-bottom: 100px;
+    padding-top: 25px;
+}
+.gnw-map-service {
 width: 750px;
 left:50px;
-    }
-    #wrapper{
-        width:95%;
-        margin:auto;
-        background-color: salmon;
-    }
-    #taille{
-        width:40%;
-        height: 400px;
-        box-shadow: 3px 3px 0px #aaa;
-        left:800px;
-        position: relative;
-        top: 100px;
-        overflow: scroll;
-        display: flex;
-    }
-    ol{
-        list-style-type: none;
-    }
-    
-    #carte{
-        position: relative;
-        bottom: 320px;
-        width: 50%;
-        
-        
-    }
-    h2{
-        color: rgb(90, 6, 6);
-        font-style: oblique;
-        font-family: cursive;
-        text-decoration: underline;
-    }
-    section{
-        background-color: lightgrey;
-        
-        
-    }
-    #welcome{
-        height:750px ;
-        margin: auto;
-        width: 95%;
-        background-image: url(/img/ville2.jpg);
-        background-repeat: no-repeat;
-        background-color: black;
-        
-    }
-    #form{
-        text-align: center;
-        top: 150px;
-        position: relative;
-        
-        
-    }
-    /*label{
-        color: firebrick;
-        font-family: cursive;
-        font-weight: bolder;
-        font-size: x-large;
-        font-style: oblique;
-    }*/
-    input{
-        border-style: solid;
-        border-width: 2px;
-        border-color: black;
-        border-radius: 10px;
-        bottom:3px;
-        left: 80px;
-        position: relative;
-    }
-    i{
-        color: floralwhite;
-    }
-    .button{
-        color: floralwhite;
-        border-radius: 3px;
-        
-    }
-    .text{
-        color: red;
-    }
-    #padding{
-        padding-top: 10px;
-        padding-left: 10px;
-        left: 800px;
-    }
-    #profil{
-        height:750px ;
-        margin: auto;
-        width: 95%;
-        background-image: url(/img/ville4.jpg);
-        background-repeat: no-repeat;
-        background-color: black;
-    }
-    #title2{
-        color: salmon;
-    }
-    #button{
-        background-color: red;
-    }
-    input[type=submit] {
-        cursor: pointer;
-      }
-    #inscription{
-        top: 30px;
-        margin: auto;
-        width: 400px;
-        padding: 1em;
-        border: 1px solid #CCC;
-        border-radius: 1em;
-    }
-    label{
-        display: inline-block;
-        width: 90px;
-        text-align: right;
-        color:black;
-        font-weight: bolder;
-    }
-    .bouton{
-        background-color: lightslategrey;
-    }
-    #align{
-        left: 95px;
-        position: relative;
-    }
-    #lien{
-        color: crimson;
-    }
-    #connexion{
-        top: 30px;
-        margin: auto;
-        width: 400px;
-        padding: 1em;
-        border: 1px solid #CCC;
-        border-radius: 1em;
-    }
-    #signin{
-        height:750px ;
-        margin: auto;
-        width: 95%;
-        background-image: url(/img/ville.jpg);
-        background-repeat: no-repeat;
-        background-color: black;
+}
 
+#taille{
+    width:40%;
+    height: 400px;
+    box-shadow: 3px 3px 0px #aaa;
+    left:800px;
+    position: relative;
+    top: 100px;
+    overflow: scroll;
+    display: flex;
+}
+ol{
+    list-style-type: none;
+}
+
+#carte{
+    position: relative;
+    bottom: 320px;
+    width: 50%;
+}
+h2{
+    color: rgb(90, 6, 6);
+    /* font-style: oblique; */
+    /* font-family: cursive; */
+    /* text-decoration: underline; */
+}
+section{
+    background-color: lightgrey;
+}
+
+#form{
+    text-align: center;
+    top: 150px;
+    position: relative;
+    
+    
+}
+/*label{
+    color: firebrick;
+    font-family: cursive;
+    font-weight: bolder;
+    font-size: x-large;
+    font-style: oblique;
+}*/
+input{
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 10px;
+    bottom:3px;
+    left: 80px;
+    position: relative;
+}
+i{
+    color: floralwhite;
+}
+.button{
+    color: floralwhite;
+    border-radius: 3px;
+    
+}
+.text{
+    color: red;
+}
+#padding{
+    padding-top: 10px;
+    padding-left: 10px;
+    left: 800px;
+}
+
+#title2{
+    color: salmon;
+}
+#button{
+    background-color: red;
+}
+input[type=submit] {
+    cursor: pointer;
     }
+#inscription{
+    top: 30px;
+    margin: auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+label{
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+    color:black;
+    /* font-weight: bolder; */
+}
+.bouton{
+    background-color: lightslategrey;
+}
+#align{
+    left: 95px;
+    position: relative;
+}
+#lien{
+    color: crimson;
+}
+#connexion{
+    top: 30px;
+    margin: auto;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+#signin{
+    height:750px ;
+    margin: auto;
+    width: 95%;
+    background-image: url(/img/ville.jpg);
+    background-repeat: no-repeat;
+    background-color: black;
+
+}

@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/yakayaller.css">
     <title>yakayaller.net - Inscription</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="profil">
-    <h1 id="title2">YAKAYALLER !</h1>
+    <h1 id="title2">yakayaller !</h1>
 
     <form action="/signup" method="post" id="inscription">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />

@@ -30,7 +30,8 @@
             <input name="email" id="email" type="email" size="30" maxlength="30"> 
         </p>
         <p id="align">
-            <input class="bouton" type="submit" value="Envoyer">
+            <input class="bouton" type="submit" value="Envoyer" />
+        </p>
         </form>
             
     </div>
