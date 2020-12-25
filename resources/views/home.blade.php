@@ -11,7 +11,6 @@
             <div id="bg">
                 <img src="img/ville2.jpg" alt="">
             </div>
-            
             <div id="yakayaller_title">YAKAYALLER !</div>
             <div id="form">
                 <form method="POST" action="/map">

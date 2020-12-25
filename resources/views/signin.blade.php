@@ -9,8 +9,10 @@
 </head>
 <body>
 <div id="signin">
-    <h1 id="title2">YAKAYALLER !</h1>
-
+    <div id="bg">
+        <img src="img/ville.jpg" alt="">
+    </div>
+    <div id="yakayaller_title">YAKAYALLER !</div>
     <form action="/signup" method="post" id="connexion">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         <h2>Connexion</h2>
