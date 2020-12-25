@@ -20,12 +20,12 @@ valider les modifications-->
     <form action="/profil" method="post" id="inscription"> 
         <h2>Formulaire d'inscription</h2>
         <p>
-            <label for="nom">Nom :</label>
-            <input name="nom" id="nom" type="text" size="30" maxlength="30" />
+            <label for="name">Nom :</label>
+            <input name="name" id="name" type="text" size="30" maxlength="30" />
         </p>
         <p>
-            <label for="prenom">Prénom :</label>
-            <input name="prenom" id="prenom" type="text" size="30" maxlength="30" />
+            <label for="firstname">Prénom :</label>
+            <input name="firstname" id="firstname" type="text" size="30" maxlength="30" />
         </p>
         
         <p>
@@ -39,6 +39,7 @@ valider les modifications-->
         <p id="align">
             <input class="bouton" type="button" value="Envoyer"></input><input class="bouton" type="button" value="reset"></input>
         </p>
+        </form>
             
     </div>
     

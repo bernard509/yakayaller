@@ -113,6 +113,9 @@ left:50px;
     #button{
         background-color: red;
     }
+    input[type=submit] {
+        cursor: pointer;
+      }
     #inscription{
         top: 30px;
         margin: auto;

@@ -34,8 +34,8 @@
         <i class="fas fa-user-plus"></i>
         
         
-            <button class="button"><a href="/profil" class="text">Inscription</a></button>
-            <button class="button"><a href="/map" class="text">Connection</a></button>
+            <button class="button"><a href="/signup" class="text">Inscription</a></button>
+            <button class="button"><a href="/signin" class="text">Connection</a></button>
 
         </div>
         
@@ -43,8 +43,10 @@
         <h1 style="margin-left:130px">YAKAYALLER !</h1>
         <div id="form">
                 <form method="POST" action="/map">
-                    <!--<label for="ville">Saisir la ville</label>--> <input type="text" id="ville" name="ville" placeholder="saisissez votre ville"/><br>
-                    <input type="button" value="valider" id="button"></input>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                    <!--<label for="ville">Saisir la ville</label>--> 
+                    <input type="text" id="city" name="city" placeholder="saisissez votre ville"/><br />
+                    <input type="submit" value="valider" id="button"></input>
                 </form>
         </div>   
     </body>

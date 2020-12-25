@@ -47,8 +47,8 @@
 
                 <article id="carte">
                     @map([
-                        'lat' => 47.473861,
-                        'lng' => -0.559159,
+                        'lat' => $default_latitude,
+                        'lng' => $default_longitude,
                         'zoom' => 9,
                         'markers' => $markers
                     ])
