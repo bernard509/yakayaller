@@ -37,3 +37,94 @@ composer require gonoware/laravel-maps
 php artisan vendor:publish --tag=maps
 
 
+
+######### rodrigue
+
+# déploiement sur clevercloud depuis le depot github https://github.com/bernard509/yakayaller/tree/main
+https://www.clever-cloud.com/doc/deploy/application/php/tutorials/tutorial-laravel/
+
+https://laravel.com/docs/8.x/http-client
+
+cd C:\Transway\rodrigue\yoann_exo\yakayaller
+
+<VirtualHost yakayaller.test:80>
+  ServerName yakayaller.test
+  DocumentRoot "c:/Transway/rodrigue/yoann_exo/yakayaller/public"
+  <Directory "c:/Transway/rodrigue/yoann_exo/yakayaller/">
+    Options -Indexes +Includes +FollowSymLinks +MultiViews
+    AllowOverride All
+    Require local
+  </Directory>
+</VirtualHost>
+
+## Api evenenement
+https://help.opendatasoft.com/apis/ods-search-v1/#records-download-api
+
+## CRON get events
+https://www.tutsmake.com/laravel-8-cron-job-task-scheduling-tutorial/
+php artisan make:command LogCron --command=log:cron
+C:\Transway\rodrigue\yoann_exo\yakayaller\app\Console\Commands\LogCron.php
+C:\Transway\rodrigue\yoann_exo\yakayaller\app\Console\Kernel.php
+
+# Execute le scheduler une fois
+php artisan schedule:run
+# Ensuite pour l'appeller toutes les minutes ajouter dans la crontab du serveur
+* * * * * cd /path-to-project && php artisan schedule:run >> /dev/null 2>&1
+
+# pour insérer les evenements récupérés via guzzle
+# https://openclassrooms.com/fr/courses/1811341-decouvrez-le-framework-php-laravel-ancienne-version/1834041-migrations-et-modeles
+
+php artisan make:model Event
+php artisan make:model Category
+php artisan make:model Address
+
+# seeders
+https://8bityard.com/how-to-get-country-list-in-laravel/
+php artisan make:seeder CountrySeeder
+php artisan make:seeder CategorySeeder
+# paramétrer C:\Transway\rodrigue\yoann_exo\yakayaller\database\seeders\DatabaseSeeder.php
+php artisan db:seed
+
+
+https://marketplace.visualstudio.com/items?itemName=berublan.vscode-log-viewer
+# log viewer
+"npm.enableRunFromFolder": true,
+    "logViewer.watch": [
+        {
+            "title": "yakayaller logger",
+            "pattern": "C:\\Transway\\rodrigue\\yoann_exo\\yakayaller\\storage\\logs\\laravel.log"
+        }
+
+# liste des événements
+SELECT
+	e.uid,
+	e.start_date,
+    c.label as category,
+    e.title,
+    a.address
+FROM `event` e 
+INNER JOIN address a ON a.id=e.address_id
+INNER JOIN category c ON c.id = e.category_id
+WHERE
+	a.zipcode IN ('49000', '49100') OR
+    a.city like '%angers%'
+    -- AND start_date between '2020-12-15' AND '2021-01-15' and
+ORDER BY start_date DESC
+
+###########################
+ALTER TABLE `event` ADD UNIQUE(`uid`);
+ALTER TABLE `event` ADD INDEX(`uid`); 
+correction des seeder en desactivcant les controles de cle entrangere pour permettre les truncate
+recréer la db et relanvcer le logcron, tous les event peuvent être importé en 1 h environ
+my.ini default-storage-engine=InnoDB
+overflow:scroll;
+height:400px;
+
+https://laravel.com/docs/8.x/helpers sorte de fonctions  assistant de code dans les vues du  front
+les commandes artisan : https://laravel.com/docs/8.x/artisan
+le query builder : https://laravel.com/docs/8.x/queries avec les where, orderby sql etc...
+la doc sur les seeder : https://laravel.com/docs/8.x/seeding
+tout sur les controller : https://laravel.com/docs/8.x/controllers
+les blade : https://laravel.com/docs/8.x/blade && https://laravel.com/docs/8.x/blade#displaying-data
+et les view : https://laravel.com/docs/8.x/views
+reste encore a piger les sessions et les formulaires
