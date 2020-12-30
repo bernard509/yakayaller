@@ -128,3 +128,7 @@ tout sur les controller : https://laravel.com/docs/8.x/controllers
 les blade : https://laravel.com/docs/8.x/blade && https://laravel.com/docs/8.x/blade#displaying-data
 et les view : https://laravel.com/docs/8.x/views
 reste encore a piger les sessions et les formulaires
+
+
+############## deployment on clevercloud
+automatic when push is done on main branch
