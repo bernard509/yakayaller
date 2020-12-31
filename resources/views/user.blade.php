@@ -27,11 +27,11 @@
         
         <li id="phone">
             <label for="phone">Téléphone :</label>
-            <input name="phone" id="phone" type="number"> 
+            <input name="phone" id="phone" type="text" size="30" maxlength="30"/> 
         </li>
         <li>
             <label for="email">Adresse mail:</label>
-            <input name="email" id="email" type="email" size="30" maxlength="30"> 
+            <input name="email" id="email" type="email" size="30" maxlength="20"> 
         </li>
         <li id="align">
             <input class="bouton" type="submit" value="Envoyer" />

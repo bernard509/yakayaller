@@ -25,7 +25,7 @@
         
             <li>
             <label for="email">Adresse mail:</label>
-            <input name="email" id="email" type="email" size="30" maxlength="30" />
+            <input name="email" id="email" type="email" size="50" maxlength="50" />
             </li>
             <li id="align">
             <input id="submit" type="submit" value="Envoyer"></input>

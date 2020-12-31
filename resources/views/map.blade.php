@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/yakayaller.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
         <title>yakayaller.net - carte des événements</title>
 
@@ -17,7 +19,7 @@
         @mapstyles
     </head>
     <body>
-        <div id="wrapper">
+        
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -31,9 +33,18 @@
                     @endauth
                 </div>
             @endif
-            
+            <div id="header">
             <h1>YAKAYALLER !</h1>
-            <h2>{{$message}}</h2>
+            <div id="bg-header">
+        <img src="img/ville7.jpg" alt="">
+    </div>
+            </div>
+            
+           <!-- @if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif-->
             <section>
             <article id="taille">
                     <ol>
@@ -55,13 +66,14 @@
                     ])
                 </article>
             </section>
-            <footer>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut doloremque temporibus incidunt? Repellendus eaque temporibus sit porro at! Repudiandae veritatis reprehenderit est consequatur odit commodi fuga unde recusandae reiciendis? Deleniti!</footer>
+            <footer>
             <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                 dev : Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                 <br />
                 yakayaller 2020 inc.
             </div>
-        </div>
+            </footer>
+       
         @mapscripts
     </body>
 </html>
