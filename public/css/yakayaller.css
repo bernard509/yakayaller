@@ -23,20 +23,20 @@ body{
   #yakayaller_title{
     top: 80px;
     color:black;
-    left: 45%;
+    left: 43.5%;
     position: absolute;
     font-size: 30px;
     font-weight: bold;
   }
 
-#user{
+/*#user{
     height:750px ;
     margin: auto;
-    width: 95%;
+    width: 100%;
     background-image: url(/img/ville4.jpg);
     background-repeat: no-repeat;
     background-color: black;
-}
+}*/
     
 h1{
     color: rgb(90, 6, 6);
@@ -63,7 +63,7 @@ left:50px;
 }
 ol{
     list-style-type: none;
-}
+}    
 
 #carte{
     position: relative;
@@ -72,9 +72,7 @@ ol{
 }
 h2{
     color: rgb(90, 6, 6);
-    /* font-style: oblique; */
-    /* font-family: cursive; */
-    /* text-decoration: underline; */
+    
 }
 section{
     background-color: lightgrey;
@@ -82,8 +80,9 @@ section{
 
 #form{
     text-align: center;
-    top: 150px;
+    top: 130px;
     position: relative;
+   
     
     
 }
@@ -107,12 +106,14 @@ i{
     color: floralwhite;
 }
 .button{
-    color: floralwhite;
+    color:black;
     border-radius: 3px;
+    position: relative;
+    
     
 }
 .text{
-    color: red;
+    color:red;
 }
 #padding{
     padding-top: 10px;
@@ -124,7 +125,7 @@ i{
     color: salmon;
 }
 #button{
-    background-color: red;
+    background-color: lightgray;
 }
 input[type=submit] {
     cursor: pointer;
@@ -145,29 +146,63 @@ label{
     /* font-weight: bolder; */
 }
 .bouton{
-    background-color: lightslategrey;
+    background-color: whitesmoke;
 }
 #align{
     left: 95px;
     position: relative;
 }
 #lien{
-    color: crimson;
+    color: red;
+    position: relative;
+    left: 50px;
+    
 }
 #connexion{
-    top: 30px;
+    bottom: 30px;
     margin: auto;
     width: 400px;
     padding: 1em;
-    border: 1px solid #CCC;
+    
     border-radius: 1em;
+    position: relative;
 }
 #signin{
     height:750px ;
     margin: auto;
-    width: 95%;
+    /*width: 95%;
     background-image: url(/img/ville.jpg);
     background-repeat: no-repeat;
-    background-color: black;
+    background-color: black;*/
 
 }
+#champ{
+    position: relative;
+    padding-right: 190px;
+    
+}
+#city{
+    background-color: mintcream;
+}
+#connect{
+        list-style-type: none;
+        right: 80px;
+        text-align: center;
+        position: relative;
+}
+#submit{
+    border-radius: 3px;
+    position: relative;
+    margin-right: 100px;
+}
+#position{
+    list-style-type: none;
+        right: 80px;
+        text-align: center;
+        position: relative;
+}
+#phone{
+    left: 48px;
+}
+
+

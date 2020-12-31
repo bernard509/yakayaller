@@ -8,32 +8,36 @@
 </head>
 <body>
     <div id="user">
-    <h1 id="title2">YAKAYALLER !</h1>
-
-    <form action="/user" method="post" id="inscription"> 
+            <div id="bg">
+                <img src="img/ville5.jpg" alt="">
+            </div>
+        <div id="yakayaller_title">YAKAYALLER !</div>
+        <div id="form">
+        <form action="/user" method="post" id="inscription"> 
         <h2>Formulaire d'inscription</h2>
-        <p>
+        <ol id="position">
+        <li>
             <label for="lastname">Nom :</label>
             <input name="lastname" id="lastname" type="text" size="30" maxlength="30" />
-        </p>
-        <p>
+        </li>
+        <li>
             <label for="firstname">Prénom :</label>
             <input name="firstname" id="firstname" type="text" size="30" maxlength="30" />
-        </p>
+        </li>
         
-        <p>
+        <li id="phone">
             <label for="phone">Téléphone :</label>
             <input name="phone" id="phone" type="number"> 
-        </p>
-        <p>
+        </li>
+        <li>
             <label for="email">Adresse mail:</label>
             <input name="email" id="email" type="email" size="30" maxlength="30"> 
-        </p>
-        <p id="align">
+        </li>
+        <li id="align">
             <input class="bouton" type="submit" value="Envoyer" />
-        </p>
+        </li>
         </form>
-            
+        </div>    
     </div>
     
 </body>

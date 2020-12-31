@@ -33,6 +33,7 @@
             @endif
             
             <h1>YAKAYALLER !</h1>
+            <h2>{{$message}}</h2>
             <section>
             <article id="taille">
                     <ol>

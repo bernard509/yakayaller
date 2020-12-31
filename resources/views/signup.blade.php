@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="profil">
+    
     <h1 id="title2">yakayaller !</h1>
 
     <form action="/signup" method="post" id="inscription">
@@ -27,9 +28,13 @@
             <label for="email">Adresse mail:</label>
             <input name="email" id="email" type="email" size="30" maxlength="30" />
         </p>
+        <p>
+            <label for="password">Mot de passe:</label>
+            <input name="password" id="password" type="password" size="30" maxlength="30" />
+        </p>
         <p id="align">
             <input class="button" type="submit" value="Envoyer"></input>
-            <!--<input class="bouton" type="button" value="reset"></input>-->
+            
         </p>
         </form>
             

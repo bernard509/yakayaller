@@ -17,15 +17,18 @@
                 <form method="POST" action="/map">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <!--<label for="ville">Saisir la ville</label>-->
-                <input type="text" id="city" name="city" placeholder="saisissez votre ville"/><br />
-                <input type="submit" value="valider" id="button"></input>
-            </form>
+                <ol id="champ">
+                <li><input type="text" id="city" name="city" placeholder="saisissez votre ville"/></li>
+                <li><input type="submit" value="valider" id="button"></input></li>
+                </ol>
+            
             <div id="padding">
                 <i class="fas fa-user-plus"></i>
                 <button class="button"><a href="/signup" class="text">Inscription</a></button>
-                <button class="button"><a href="/signin" class="text">Connection</a></button>
+                <button class="button"><a href="/signin" class="text">Connexion</a></button>
             </div>
-        </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>

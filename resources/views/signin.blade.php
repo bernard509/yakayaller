@@ -8,29 +8,35 @@
     <title>yakayaller.net - connexion</title>
 </head>
 <body>
-<div id="signin">
-    <h1 id="title2">YAKAYALLER !</h1>
+    <div id="signin">
+            <div id="bg">
+                <img src="img/ville4.jpg" alt="">
+            </div>
+            <div id="yakayaller_title">YAKAYALLER !</div>
+    <div id="form">
 
     <form action="/signup" method="post" id="connexion">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         <h2>Connexion</h2>
-        <p>
-            <label for="mdp">Mot de passe:</label>
+        <ol id="connect">
+           <li> <label for="mdp">Mot de passe:</label>
             <input name="mdp" id="mdp" type="text" size="30" maxlength="30" />
-        </p>
+           </li>
         
-        <p>
+            <li>
             <label for="email">Adresse mail:</label>
             <input name="email" id="email" type="email" size="30" maxlength="30" />
-        </p>
-        <p id="align">
-            <input class="button" type="submit" value="Envoyer"></input>
+            </li>
+            <li id="align">
+            <input id="submit" type="submit" value="Envoyer"></input>
             <!--<input class="bouton" type="button" value="reset"></input>-->
-        </p>
-        <p>Pas encore de compte?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/signup" id="lien">Cliquez ici</a></p>
+            </li>
+            <li>Pas encore de compte?<a href="/signup" id="lien">Cliquez ici</a></li>
+        </ol>
         
-        </form>
-            
+    </form>
+          
+    </div>
     </div>
     
     
