@@ -8,13 +8,13 @@
     <title>yakayaller.net - connexion</title>
 </head>
 <body>
-    <div id="signin">
+<div id="signin">
             <div id="bg">
                 <img src="img/ville4.jpg" alt="">
             </div>
             <div id="yakayaller_title">YAKAYALLER !</div>
     <div id="form">
-
+    
     <form action="/signup" method="post" id="connexion">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         <h2>Connexion</h2>
@@ -37,7 +37,7 @@
     </form>
           
     </div>
-    </div>
+</div>
     
     
 </body>

@@ -9,10 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="profil">
-    
-    <h1 id="title2">yakayaller !</h1>
-
+    <div id="signup">
+    <div id="bg">
+        <img src="img/ville.jpg" alt="">
+    </div>
+    <div id="yakayaller_title">YAKAYALLER !</div>
     <form action="/signup" method="post" id="inscription">
         <input type="hidden" name="_token" value="{{ csrf_token() }}" />
         <h2>Formulaire d'inscription</h2>

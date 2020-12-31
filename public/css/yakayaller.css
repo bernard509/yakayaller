@@ -29,6 +29,7 @@ body{
     font-weight: bold;
   }
 
+
 /*#user{
     height:750px ;
     margin: auto;
@@ -82,17 +83,8 @@ section{
     text-align: center;
     top: 130px;
     position: relative;
-   
-    
-    
 }
-/*label{
-    color: firebrick;
-    font-family: cursive;
-    font-weight: bolder;
-    font-size: x-large;
-    font-style: oblique;
-}*/
+
 input{
     border-style: solid;
     border-width: 2px;
@@ -109,8 +101,6 @@ i{
     color:black;
     border-radius: 3px;
     position: relative;
-    
-    
 }
 .text{
     color:red;
@@ -121,9 +111,6 @@ i{
     left: 800px;
 }
 
-#title2{
-    color: salmon;
-}
 #button{
     background-color: lightgray;
 }
@@ -165,6 +152,7 @@ label{
     padding: 1em;
     
     border-radius: 1em;
+
     position: relative;
 }
 #signin{
@@ -174,12 +162,10 @@ label{
     background-image: url(/img/ville.jpg);
     background-repeat: no-repeat;
     background-color: black;*/
-
 }
 #champ{
     position: relative;
     padding-right: 190px;
-    
 }
 #city{
     background-color: mintcream;
@@ -204,5 +190,4 @@ label{
 #phone{
     left: 48px;
 }
-
 
