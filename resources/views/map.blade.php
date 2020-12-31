@@ -47,6 +47,16 @@
 @endif-->
             <section>
             <article id="taille">
+                <form>
+                <div id="form2">
+                <form method="POST" action="/map">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                <!--<label for="ville">Saisir la ville</label>-->
+                <ol id="champ">
+                <input type="text" id="city" name="city" placeholder="saisissez votre ville"/>&nbsp;&nbsp;<input type="text" id="date" name="date" placeholder="Date de début" size="10" maxlenght="10"/>&nbsp;&nbsp;<input type="text" id="date" name="date" placeholder="Date de fin" size="10" maxlenght="10"/>
+                <input type="submit" value="valider" id="button2"></input>
+                </ol>
+            
                     <ol>
                         @foreach ($events as $e)
                         <li>
