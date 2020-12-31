@@ -28,8 +28,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('log:cron')
             //->everyMinute();
             //->hourly();
-            ->daily();
-            //->twiceDaily(1, 13);
+            //->daily();
+            ->twiceDaily(2, 13);
     }
 
     /**
