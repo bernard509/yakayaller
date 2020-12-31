@@ -1,5 +1,7 @@
 body{
     font-family: 'Bangers', cursive;
+    color: lightcoral;
+    background-color:black;
 }
 
 #bg {
@@ -19,7 +21,7 @@ body{
     min-width: 50%;
     min-height: 50%;
   }
-  #bg-header{
+  /*#bg-header{
       position: relative;
       top: -50%; 
     left: -50%; 
@@ -35,7 +37,7 @@ body{
     margin: auto; 
     min-width: 50%;
     min-height: 50%;
-  }
+  }*/
 
   #yakayaller_title{
     top: 80px;
@@ -204,16 +206,23 @@ label{
         text-align: center;
         position: relative;
 }
-/*#header{
-    background-image: url("../img/ville7.jpg");
+#header{
+    background-image: url("../img/ville6.jpg");
     background-repeat: no-repeat;
     position: relative;
     height: 220px;
-    background-position: center;
-}*/
+    background-position: top left;
+    background-color: lavender;
+    background-size: cover;
+}
 footer{
-    background-image: url("../img/ville8.jpg");
+    background-image: url("../img/ville6.jpg");
     background-repeat: no-repeat;
     position: relative;
-    
+    height:220px;
+    background-size: cover;
+    background-position: top left;
 }
+    
+    
+

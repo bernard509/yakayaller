@@ -35,9 +35,9 @@
             @endif
             <div id="header">
             <h1>YAKAYALLER !</h1>
-            <div id="bg-header">
-        <img src="img/ville7.jpg" alt="">
-    </div>
+            <!--<div id="bg-header">
+        <img src="img/ville6.jpg" alt="">
+    </div>-->
             </div>
             
            <!-- @if (session('message'))
