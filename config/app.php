@@ -41,6 +41,8 @@ return [
 
     'debug' => (bool) env('APP_DEBUG', false),
 
+    'log' => env('APP_LOG', 'single'),
+
     /*
     |--------------------------------------------------------------------------
     | Application URL
@@ -228,7 +230,5 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-
-    'log' => env('APP_LOG', 'single'),
 
 ];
