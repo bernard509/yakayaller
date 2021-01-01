@@ -51,8 +51,10 @@ class MapController extends Controller
         }
         // je défini les latitudes et longitude par défaut du centre de la carte
         // avec celles du dernier événement traité dans la boucle
-        $default_latitude = $e->latitude;
-        $default_longitude = $e->longitude;
+        if(isset($e)){
+            $default_latitude = $e->latitude;
+            $default_longitude = $e->longitude;
+        }
         //\Log::info(var_export($events, true));
 
         // Renvoi de la vue map avec le tableau $event des événements et le tableau $markers des marqueurs à afficher sur la carte
