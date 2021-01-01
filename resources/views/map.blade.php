@@ -3,7 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noindex, nofollow">
         <link rel="stylesheet" href="css/yakayaller.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 
         <title>yakayaller.net - carte des événements</title>
 
@@ -17,7 +20,7 @@
         @mapstyles
     </head>
     <body>
-        <div id="wrapper">
+        
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -31,10 +34,30 @@
                     @endauth
                 </div>
             @endif
-            
+            <div id="header">
             <h1>YAKAYALLER !</h1>
+            <!--<div id="bg-header">
+        <img src="img/ville6.jpg" alt="">
+    </div>-->
+            </div>
+            
+           <!-- @if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif-->
             <section>
             <article id="taille">
+                <form>
+                <div id="form2">
+                <form method="POST" action="/map">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                <!--<label for="ville">Saisir la ville</label>-->
+                <ol id="champ">
+                <input type="text" id="city" name="city" placeholder="saisissez votre ville"/>&nbsp;&nbsp;<input type="text" id="date" name="date" placeholder="Date de début" size="10" maxlenght="10"/>&nbsp;&nbsp;<input type="text" id="date" name="date" placeholder="Date de fin" size="10" maxlenght="10"/>
+                <input type="submit" value="valider" id="button2"></input>
+                </ol>
+            
                     <ol>
                         @foreach ($events as $e)
                         <li>
@@ -54,13 +77,14 @@
                     ])
                 </article>
             </section>
-            <footer>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut doloremque temporibus incidunt? Repellendus eaque temporibus sit porro at! Repudiandae veritatis reprehenderit est consequatur odit commodi fuga unde recusandae reiciendis? Deleniti!</footer>
+            <footer>
             <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
                 dev : Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
                 <br />
                 yakayaller 2020 inc.
             </div>
-        </div>
+            </footer>
+       
         @mapscripts
     </body>
 </html>
