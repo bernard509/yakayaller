@@ -171,7 +171,7 @@ class LogCron extends Command
 
                                     $cpt_events++;
                                 } catch(\PDOException $pdoe){
-                                    if(str_contains($pdoe->getMessage(), "pour la clef 'event.uid'")){
+                                    if(str_contains($pdoe->getMessage(), "pour la clef 'event.uid'") || str_contains($pdoe->getMessage(), "for key 'uid'")){
                                         $cpt_event_already_inserted++;
                                         if($cpt_event_already_inserted%1000 == 0) {
                                             \Log::info("$cpt_event_already_inserted already processed !");
