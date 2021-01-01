@@ -230,5 +230,6 @@ return [
     ],
 
     'log' => 'syslog',
+    'cli_memory_limit' => env('CLI_MEMORY_LIMIT', null),
 
 ];
