@@ -25,11 +25,11 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('log:cron')
+        $schedule->command('log:cron')->everyTwoHours();
             //->everyMinute();
             //->hourly();
             //->daily();
-            ->twiceDaily(2, 13);
+            //->twiceDaily(2, 13);
     }
 
     /**
