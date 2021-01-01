@@ -43,11 +43,14 @@ class LogCron extends Command
             ini_set('memory_limit', $cli_memory_limit);
             \Log::info("cli_memory_limit: $cli_memory_limit");
         }
+        else {
+            \Log::info("no cli_memory_limit");
+        }
         ini_set('max_execution_time', 0);
         //ini_set('memory_limit', '-1');
 
         \Log::info("Cron get event is launched !");
-        return true;
+
         // Url de l'api en mode download
         $url = 'http://public.opendatasoft.com/api/records/1.0/download/?dataset=evenements-publics-cibul&q=&sort=date_start&lang=fr&format=json&facet=tags&facet=placename&facet=department&facet=region&facet=city&facet=date_start&facet=date_end&facet=pricing_info&facet=updated_at&facet=city_district';
 
@@ -82,7 +85,7 @@ class LogCron extends Command
             // Mois courant
             $current_month = 1;
         }
-        // \Log::info("$current_year-$current_month");
+        \Log::info("$current_year-$current_month");
         // return true;
 
         // Nombre d'iteration maximmum (nb mois demandé)
