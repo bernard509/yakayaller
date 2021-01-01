@@ -13,7 +13,7 @@ class MapController extends Controller
         // valeur par défaut si je n'arrive pas via le formulaire de recherche
         $city = 'angers';
         $min_date = '2021-01-01';
-        $max_date = '2021-04-01';
+        $max_date = '2021-06-01';
         $default_latitude = 47.473861;
         $default_longitude = -0.559159;
 
@@ -21,6 +21,12 @@ class MapController extends Controller
         // si on arrive via le formulaire et que la ville est renseignée
         if ($request->isMethod('post') && !is_null($request->input('city'))) {
             $city = $request->input('city');
+            if (!is_null($request->input('start_date'))) {
+                $min_date = $request->input('start_date');
+            }
+            if (!is_null($request->input('end_date'))) {
+                $max_date = $request->input('end_date');
+            }
         }
 
         // initialisation de l'objet Event
@@ -64,7 +70,10 @@ class MapController extends Controller
             'events'=> $events,
             'markers' => $markers,
             'default_latitude' => $default_latitude,
-            'default_longitude' => $default_longitude
+            'default_longitude' => $default_longitude,
+            'city' => $city,
+            'start_date' => $min_date,
+            'end_date' => $max_date,
             ]);
 	}
 }

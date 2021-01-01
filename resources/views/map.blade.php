@@ -50,19 +50,22 @@
                 <form method="POST" action="/map" id="form-map-events">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <ul id="champ">
-                        <input type="text" id="city" name="city" placeholder="saisissez votre ville"/>&nbsp;&nbsp;<input type="text" id="date" name="date" placeholder="Date de début" size="10" maxlenght="10"/>&nbsp;&nbsp;<input type="text" id="date" name="date" placeholder="Date de fin" size="10" maxlenght="10"/>
+                        <input type="text" id="city" name="city" value="{{ $city }}" placeholder="Saisissez votre ville"/>&nbsp;entre le&nbsp;<input type="text" id="date" name="start_date" value="{{ $start_date }}" placeholder="YYYY/MM/DD" size="10" maxlenght="10"/>&nbsp;et le&nbsp;<input type="text" id="date" name="end_date" value="{{ $end_date }}" placeholder="YYYY/MM/DD" size="10" maxlenght="10"/>
                         <a href="javascript:;" onclick="parentNode.parentNode.submit();" class="button4" style="background-color:#f14e4e">Valider</a></input>
                     </ul>
                 </form>
-            
-                <ul>
-                    @foreach ($events as $e)
-                    <li>
-                        <h2>{{ $e->title }}</h2>
-                        <p>{{ $e->description }}</p>
-                    </li>
-                    @endforeach
-                </ul>
+
+                <div id="ctn_event_list">            
+                    <ul class="event_list">
+                        @foreach ($events as $e)
+                        <li>
+                            <h3>{{ $e->title}} ({{ $e->start_date}} / {{ $e->end_date}})</h3>
+                            <p class="txt_event">{{ htmlspecialchars_decode($e->description) }}</p>
+                            <h4>{{ $e->space_time_info }}</h4>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
             </article>
         </section>
         <footer>

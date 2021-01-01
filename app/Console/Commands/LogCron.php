@@ -44,10 +44,10 @@ class LogCron extends Command
             \Log::info("cli_memory_limit: $cli_memory_limit");
         }
         else {
-            \Log::info("no cli_memory_limit");
+            ini_set('memory_limit', '-1');
+            \Log::info("no cli_memory_limit so we try with -1 (unlimited)");
         }
         ini_set('max_execution_time', 0);
-        //ini_set('memory_limit', '-1');
 
         \Log::info("Cron get event is launched !");
 

@@ -90,9 +90,23 @@ h2 {
     font-weight:unset;
     text-shadow: 1px 1px 1px #630202;
 }
+h3 {
+    color:#f14e4e;
+    font-size: 16px;
+    font-weight:bold;
+    margin-block-end: 0;
+    text-align:left;
+}
+h4 {
+    color:black;
+    font-size: 14px;
+    font-weight:bold;
+    margin-block-start: 0.5em;
+    text-align:left;
+}
 
 section{
-    background-color:rgb(255, 255, 255, 0.7);
+    background-color:rgb(255, 255, 255, 0.92);
     border-radius:10px;
     margin-left:5%;
     height: 88%;
@@ -123,11 +137,25 @@ section{
 #events{
     width:49%;
     height:100%;
+    overflow: scroll;
+    overflow-x: hidden;
     /* box-shadow: 3px 3px 0px rgb(173, 82, 82); */
     /* right:0; */
-    overflow: scroll;
     /* background-color: #ac6060;
     background-clip: border-box; */
+}
+.txt_event{
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    text-align:justify;
+}
+#ctn_event_list{
+    /* overflow: scroll;
+    overflow-x: hidden; */
+}
+.event_list{
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
 }
 #form{
     text-align: center;
@@ -141,6 +169,7 @@ section{
     margin:10px;
     border:1px solid gray;
     border-radius:5px;
+    /* position:fixed; */
 }
 
 li {
@@ -238,7 +267,7 @@ ul{
 }
 #champ{
     position: relative;
-    padding-right: 190px;
+    /* padding-right: 190px; */
 }
 #city{
     background-color: mintcream;
