@@ -41,7 +41,7 @@ return [
 
     'debug' => (bool) env('APP_DEBUG', false),
 
-    'log' => env('APP_LOG', 'syslog'),
+    //'log' => env('APP_LOG', 'syslog'),
 
     /*
     |--------------------------------------------------------------------------
@@ -211,7 +211,8 @@ return [
         'Hash' => Illuminate\Support\Facades\Hash::class,
         'Http' => Illuminate\Support\Facades\Http::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
-        'Log' => Illuminate\Support\Facades\Log::class,
+        //'Log' => Illuminate\Support\Facades\Log::class,
+        'Log' => env('APP_LOG', 'single'),
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
