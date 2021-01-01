@@ -6,41 +6,45 @@
     <meta name="robots" content="noindex, nofollow">
     <link rel="stylesheet" href="css/yakayaller.css">
     <title>yakayaller.net - Inscription</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="signup">
-    <div id="bg">
-        <img src="img/ville.jpg" alt="">
+    <div id="wrapper">
+        <div id="menu-haut">
+            <a href="/map" class="button4" style="background-color:#f14e4e;">Evénements</a>
+        </div>
+        <div id="bg">
+            <img src="img/ville.jpg" alt="">
+        </div>
+        <div id="form">
+            <ul>
+                <li><div id="yakayaller_title" style="padding-bottom:120px;">YAKAYALLER !</div></li>
+            </ul>
+            <form action="/signup" method="post" id="inscription">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                <ul id="signup">                    
+                    <li>
+                        <label for="lastname">Nom :</label>
+                        <input name="lastname" id="lastname" type="text" size="30" maxlength="255" />
+                    </li>
+                    <li>
+                        <label for="firstname">Prénom :</label>
+                        <input name="firstname" id="firstname" type="text" size="30" maxlength="255" />
+                    </li>
+                    <li>
+                        <label for="email">Adresse mail:</label>
+                        <input name="email" id="email" type="email" size="30" maxlength="255" />
+                    </li>
+                    <li>
+                        <label for="password">Mot de passe:</label>
+                        <input name="password" id="password" type="password" size="30" maxlength="255" />
+                    </li>
+                    <li><a href="javascript:;" onclick="parentNode.parentNode.parentNode.submit();" class="button4" style="background-color:#f14e4e">S'inscrire</a></li>
+                    <!-- <li>
+                        <input class="button" type="submit" value="Envoyer"></input>
+                    </li> -->
+                </ul>
+            </form>
+        </div>
     </div>
-    <div id="yakayaller_title">YAKAYALLER !</div>
-    <form action="/signup" method="post" id="inscription">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-        <h2>Formulaire d'inscription</h2>
-        <p>
-            <label for="lastname">Nom :</label>
-            <input name="lastname" id="lastname" type="text" size="30" maxlength="30" />
-        </p>
-        <p>
-            <label for="firstname">Prénom :</label>
-            <input name="firstname" id="firstname" type="text" size="30" maxlength="30" />
-        </p>
-        <p>
-            <label for="email">Adresse mail:</label>
-            <input name="email" id="email" type="email" size="30" maxlength="30" />
-        </p>
-        <p>
-            <label for="password">Mot de passe:</label>
-            <input name="password" id="password" type="password" size="30" maxlength="30" />
-        </p>
-        <p id="align">
-            <input class="button" type="submit" value="Envoyer"></input>
-            
-        </p>
-        </form>
-            
-    </div>
-    
 </body>
 </html>

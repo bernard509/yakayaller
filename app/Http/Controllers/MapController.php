@@ -30,6 +30,8 @@ class MapController extends Controller
         // et stockage des événements trouvés dans la variable $events
         $events = $event->byCityAndDateBetween($city, $min_date, $max_date);
 
+        // \Log::info(var_export($events, true));
+
         // initialisation des marqueurs de la carte dans une variable $markers de type tableau
         $markers = [];
         // pour chaque événement
@@ -64,11 +66,5 @@ class MapController extends Controller
             'default_latitude' => $default_latitude,
             'default_longitude' => $default_longitude
             ]);
-
 	}
-	
-    }
-    
-		
-
-
+}

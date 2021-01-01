@@ -146,7 +146,7 @@ class LogCron extends Command
                                     foreach($categories as $c) {
                                         // insertion de la catégorie en bdd si son label n'existe pas déjà
                                         $category = \App\Models\Category::firstOrCreate(
-                                            ['label' =>  mb_strtolower($c)],
+                                            ['label' =>  mb_strtolower(addslashes($c))],
                                             ['category_id'=> null]
                                         );
                                     }

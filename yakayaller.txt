@@ -106,19 +106,16 @@ FROM `event` e
 INNER JOIN address a ON a.id=e.address_id
 INNER JOIN category c ON c.id = e.category_id
 WHERE
-	a.zipcode IN ('49000', '49100') OR
-    a.city like '%angers%'
-    -- AND start_date between '2020-12-15' AND '2021-01-15' and
+	(a.zipcode IN ('49000', '49100') OR a.city like '%angers%')
+    AND start_date between '2021-01-01' AND '2021-04-01'
 ORDER BY start_date DESC
 
 ###########################
 ALTER TABLE `event` ADD UNIQUE(`uid`);
 ALTER TABLE `event` ADD INDEX(`uid`); 
-correction des seeder en desactivcant les controles de cle entrangere pour permettre les truncate
+correction des seeder en desactivant les contrôles de clé étrangère pour permettre les truncate
 recréer la db et relanvcer le logcron, tous les event peuvent être importé en 1 h environ
 my.ini default-storage-engine=InnoDB
-overflow:scroll;
-height:400px;
 
 https://laravel.com/docs/8.x/helpers sorte de fonctions  assistant de code dans les vues du  front
 les commandes artisan : https://laravel.com/docs/8.x/artisan
@@ -127,9 +124,55 @@ la doc sur les seeder : https://laravel.com/docs/8.x/seeding
 tout sur les controller : https://laravel.com/docs/8.x/controllers
 les blade : https://laravel.com/docs/8.x/blade && https://laravel.com/docs/8.x/blade#displaying-data
 et les view : https://laravel.com/docs/8.x/views
-reste encore a piger les sessions et les formulaires
+reste encore à comprendre les sessions
 
 
 ############## deployment on clevercloud
 add a ssh key
 automatic when push is done on main branch
+clever
+If you're using the clever-tools in a CI/CD environment,
+you may need to set these tokens in your secrets
+and expose them as environment variables:
+CLEVER_TOKEN=b6c343bded7c4fcabe42bc62fcb359dc
+CLEVER_SECRET=48372703f6fc4166878792a9ec4c2b42
+
+# regarder la doc mais déjà
+# installation de clever
+npm install -g clever-tools
+# paramétrage de la clef ssh
+vi /.ssh/config
+eval `ssh-agent -s`
+ssh-add ~/.ssh/id_ed25519
+# test ssh sur clever
+ssh git@push.clever-cloud.com
+PTY allocation request failed on channel 0
+Hello rodrigue bernard,
+Your ssh key is correctly configured.
+It gives you access to the following applications:
+Personal apps:
+	- yakayaller (app_1266f5bc-bd68-4c3a-b23c-06bc9053717e)
+Personal space (user_5784d76f-819a-4fa7-a88c-c23041c51b60):
+	- yakayaller (app_1266f5bc-bd68-4c3a-b23c-06bc9053717e)
+
+Connection to push.clever-cloud.com closed.
+# upgrade de npm
+npm install -g npm
+# selection de node 12
+n
+# connexion a clever
+clever login
+# link de l'application
+clever link --org orga_87af176a-08e9-4b27-81ed-503416d91505 app_1266f5bc-bd68-4c3a-b23c-06bc9053717e
+# connexion a l'app
+clever ssh
+bas@3e7097d7-c9df-4998-8d8a-c6645e19f04c ~ $ cd app_1266f5bc-bd68-4c3a-b23c-06bc9053717e/
+
+Exécuter le cron en one shot
+php artisan log:cron
+
+MYSQL_ADDON_HOST=127.0.0.1
+MYSQL_ADDON_PORT=3306
+MYSQL_ADDON_DB=yakayaller
+MYSQL_ADDON_USER=root
+MYSQL_ADDON_PASSWORD=

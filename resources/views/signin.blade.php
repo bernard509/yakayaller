@@ -9,37 +9,32 @@
     <title>yakayaller.net - connexion</title>
 </head>
 <body>
-<div id="signin">
-            <div id="bg">
-                <img src="img/ville4.jpg" alt="">
-            </div>
-            <div id="yakayaller_title">YAKAYALLER !</div>
-    <div id="form">
-    
-    <form action="/signup" method="post" id="connexion">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-        <h2>Connexion</h2>
-        <ol id="connect">
-           <li> <label for="mdp">Mot de passe:</label>
-            <input name="mdp" id="mdp" type="text" size="30" maxlength="30" />
-           </li>
-        
-            <li>
-            <label for="email">Adresse mail:</label>
-            <input name="email" id="email" type="email" size="50" maxlength="50" />
-            </li>
-            <li id="align">
-            <input id="submit" type="submit" value="Envoyer"></input>
-            <!--<input class="bouton" type="button" value="reset"></input>-->
-            </li>
-            <li>Pas encore de compte?<a href="/signup" id="lien">Cliquez ici</a></li>
-        </ol>
-        
-    </form>
-          
+    <div id="wrapper">
+        <div id="menu-haut">
+            <a href="/map" class="button4" style="background-color:#f14e4e;">Evénements</a>
+        </div>
+        <div id="bg">
+            <img src="img/ville4.jpg" alt="">
+        </div>
+        <div id="form">
+            <form action="/signup" method="post" id="connexion">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                <ul>
+                    <li><div id="yakayaller_title" style="padding-bottom:120px;">YAKAYALLER !</div></li>
+                    <li>
+                        <label for="email">Adresse mail:</label>
+                        <input name="email" id="email" type="email" size="30" maxlength="255" />
+                    </li>
+                    <li>
+                        <label for="password">Mot de passe:</label>
+                        <input name="password" id="mdp" type="password" size="30" maxlength="255" />
+                    </li>
+                    <li><a href="javascript:;" onclick="parentNode.parentNode.parentNode.submit();" class="button4" style="background-color:#f14e4e">Se connecter</a></li>
+                    <!--<li><input id="submit" type="submit" value="Envoyer"></input></li>-->
+                    <li style="padding-left:110px;text-align:center">Pas encore de compte ? <a href="/signup" id="lien">Cliquez ici</a></li>
+                </ul>
+            </form>
+        </div>
     </div>
-</div>
-    
-    
 </body>
 </html>

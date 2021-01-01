@@ -20,7 +20,6 @@ class UserController extends Controller{
 	public function signup(Request $request)
 	
 	{
-		\Log::info("coucou !");
 		if ($request->isMethod('post') 
 			&& !is_null($request->input('firstname'))
 			&& !is_null($request->input('lastname')) 

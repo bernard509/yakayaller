@@ -19,6 +19,7 @@ class Event extends Model
     // ];
 
     public function byCityAndDateBetween($city, $min_date, $max_date) {
+        //\Log::info("$city, $min_date, $max_date");
         $events = Event::join('address', 'address.id', '=', 'event.address_id')
             ->join('category', 'category.id', '=', 'event.category_id')
             ->where('start_date', '>=', $min_date)
@@ -27,6 +28,7 @@ class Event extends Model
             ->orderBy('start_date')
             //->take(2)
             ->get();
+        //\Log::info(var_export($events, true));
         return $events;
     }
 
