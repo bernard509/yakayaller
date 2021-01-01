@@ -50,7 +50,7 @@
                 <form method="POST" action="/map" id="form-map-events">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <ul id="champ">
-                        <input type="text" id="city" name="city" value="{{ $city }}" placeholder="Saisissez votre ville"/>&nbsp;entre le&nbsp;<input type="text" id="date" name="start_date" value="{{ $start_date }}" placeholder="YYYY/MM/DD" size="10" maxlenght="10"/>&nbsp;et le&nbsp;<input type="text" id="date" name="end_date" value="{{ $end_date }}" placeholder="YYYY/MM/DD" size="10" maxlenght="10"/>
+                        <input type="text" id="city" name="city" value="{{ $city }}" placeholder="Saisissez votre ville"/>&nbsp;entre le&nbsp;<input type="text" id="date" name="start_date" value="{{ $start_date }}" placeholder="YYYY-MM-DD" size="10" maxlenght="10"/>&nbsp;et le&nbsp;<input type="text" id="date" name="end_date" value="{{ $end_date }}" placeholder="YYYY-MM-DD" size="10" maxlenght="10"/>
                         <a href="javascript:;" onclick="parentNode.parentNode.submit();" class="button4" style="background-color:#f14e4e">Valider</a></input>
                     </ul>
                 </form>
@@ -70,7 +70,7 @@
         </section>
         <footer>
             <div id="copyright">
-                yakayaller 2020 inc.
+                yakayaller 2021 inc.
                 <br />
                 Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
             </div>
