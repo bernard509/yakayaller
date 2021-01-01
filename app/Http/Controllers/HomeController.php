@@ -9,9 +9,9 @@ class HomeController extends Controller
 {
     public function index(Request $request)
 	{
-		\Log::info("taratata");
-		\Log::error("taratata");
-		\Log::info($request->input('city'));
+		//\Log::info("taratata");
+		//\Log::error("taratata");
+		//\Log::info($request->input('city'));
 		//si la methode est post et si city est renseigné
 		//alors je renvoie sur map avec la liste des evênements de la city
 		if ($request->isMethod('post') && !is_null($request->input('city'))) {
