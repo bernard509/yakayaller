@@ -17,10 +17,13 @@
             <img src="img/ville4.jpg" alt="">
         </div>
         <div id="form">
-            <form action="/signup" method="post" id="connexion">
+            <form action="/signin" method="post" id="connexion">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <ul>
                     <li><div id="yakayaller_title" style="padding-bottom:120px;">YAKAYALLER !</div></li>
+                    @if (isset($message))
+                    <li><h6>{{ $message }}</h6></li>
+                    @endif
                     <li>
                         <label for="email">Adresse mail:</label>
                         <input name="email" id="email" type="email" size="30" maxlength="255" />
@@ -30,7 +33,6 @@
                         <input name="password" id="mdp" type="password" size="30" maxlength="255" />
                     </li>
                     <li><a href="javascript:;" onclick="parentNode.parentNode.parentNode.submit();" class="button4" style="background-color:#f14e4e">Se connecter</a></li>
-                    <!--<li><input id="submit" type="submit" value="Envoyer"></input></li>-->
                     <li style="padding-left:110px;text-align:center">Pas encore de compte ? <a href="/signup" id="lien">Cliquez ici</a></li>
                 </ul>
             </form>

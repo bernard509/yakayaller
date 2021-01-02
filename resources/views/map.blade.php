@@ -9,20 +9,12 @@
         @mapstyles
     </head>
     <body>
-        @if (Route::has('login'))
-            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                @auth
-                    <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
-                @else
-                    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
         <div id="menu-haut">
+            @auth
+            <a href="/user" class="button4" style="background-color:#9a4ef1;">Mon profil</a>
+            @else
             <a href="/signin" class="button4" style="background-color:#9a4ef1;">Se connecter</a>
+            @endauth
             <a href="/" class="button4" style="background-color:#f14e4e;">Accueil</a>
         </div>
         <div id="header">
@@ -31,11 +23,9 @@
         <div id="bg">
             <img src="img/ville2.jpg" alt="">
         </div>
-           <!-- @if (session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
-    </div>
-@endif-->
+        @if (session('message'))
+            <h6>{{ session('message') }}</h6>
+        @endif
         <section>
             <article id="map">
                 @map([

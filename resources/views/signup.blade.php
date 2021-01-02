@@ -21,27 +21,32 @@
             </ul>
             <form action="/signup" method="post" id="inscription">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                <ul id="signup">                    
+                <ul id="signup">
+                    <li>
+                        <label for="civility">Civilité :</label>
+                        <select name="civility" id="civility">
+                            <option value="Mr" {{ $civility=="Mr" ? "selected" : "" }}>Mr</option>
+                            <option value="Mme"{{ $civility=="Mme" ? "selected" : "" }}>Mme</option>
+                            <option value="Mlle"{{ $civility=="Mlle" ? "selected" : "" }}>Mlle</option>
+                        </select>
+                    </li>
                     <li>
                         <label for="lastname">Nom :</label>
-                        <input name="lastname" id="lastname" type="text" size="30" maxlength="255" />
+                        <input name="lastname" id="lastname" value="{{ $lastname }}" type="text" size="30" maxlength="255" />
                     </li>
                     <li>
                         <label for="firstname">Prénom :</label>
-                        <input name="firstname" id="firstname" type="text" size="30" maxlength="255" />
+                        <input name="firstname" id="firstname" value="{{ $firstname }}" type="text" size="30" maxlength="255" />
                     </li>
                     <li>
                         <label for="email">Adresse mail:</label>
-                        <input name="email" id="email" type="email" size="30" maxlength="255" />
+                        <input name="email" id="email" type="email" value="{{ $email }}" size="30" maxlength="255" />
                     </li>
                     <li>
                         <label for="password">Mot de passe:</label>
                         <input name="password" id="password" type="password" size="30" maxlength="255" />
                     </li>
                     <li><a href="javascript:;" onclick="parentNode.parentNode.parentNode.submit();" class="button4" style="background-color:#f14e4e">S'inscrire</a></li>
-                    <!-- <li>
-                        <input class="button" type="submit" value="Envoyer"></input>
-                    </li> -->
                 </ul>
             </form>
         </div>

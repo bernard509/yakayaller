@@ -23,27 +23,27 @@
                     <li><h2>Modifier mon profil</h2></li>
                     <li>
                         <label for="civility">Civilité :</label>
-                        <input name="civility" id="civility" type="text" size="30" maxlength="30" />
+                        <select name="civility" id="civility">
+                            <option value="Mr">Mr</option>
+                            <option value="Mme">Mme</option>
+                            <option value="Mlle">Mlle</option>
+                        </select>
                     </li>
                     <li>
                         <label for="lastname">Nom :</label>
-                        <input name="lastname" id="lastname" type="text" size="30" maxlength="255" />
+                        <input name="lastname" id="lastname" value="{{ $lastname }}" type="text" size="30" maxlength="255" />
                     </li>
                     <li>
                         <label for="firstname">Prénom :</label>
-                        <input name="firstname" id="firstname" type="text" size="30" maxlength="255" />
+                        <input name="firstname" id="firstname" value="{{ $firstname }}" type="text" size="30" maxlength="255" />
                     </li>
-                    <li id="phone">
+                    <li>
                         <label for="phone">Téléphone :</label>
-                        <input name="phone" id="phone" type="text" size="30" maxlength="30"/>
+                        <input name="phone" id="phone" value="{{ $phone }}" type="text" size="30" maxlength="30"/>
                     </li>
                     <li>
                         <label for="email">Adresse mail:</label>
-                        <input name="email" id="email" type="email" size="30" maxlength="255">
-                    </li>
-                    <li>
-                        <label for="password">Mot de passe:</label>
-                        <input name="password" id="password" type="password" size="30" maxlength="255" />
+                        <input name="email" id="email" type="email" value="{{ $email }}" size="30" maxlength="255">
                     </li>
                     <li><a href="javascript:;" onclick="parentNode.parentNode.parentNode.submit();" class="button4" style="background-color:#f14e4e">Mettre à jour</a></li>
                 </ul>
