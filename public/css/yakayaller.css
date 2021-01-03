@@ -296,6 +296,9 @@ ul{
 }
 #champ{
     position: relative;
+    
+    /* padding-right: 190px; */
+    padding-inline-start: 0px;
     /* padding-right: 190px; */
 }
 #city{
