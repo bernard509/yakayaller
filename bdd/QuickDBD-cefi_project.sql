@@ -61,6 +61,7 @@ CREATE TABLE `user` (
     `email` varchar(255)  NOT NULL ,
     `password` varchar(255)  NOT NULL ,
     `phone` varchar(20) ,
+    `remember_token` VARCHAR(100) ,
     `created_at` datetime  NOT NULL ,
     `updated_at` datetime  NOT NULL ,
     PRIMARY KEY (
